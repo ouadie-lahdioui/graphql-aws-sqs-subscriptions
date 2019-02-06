@@ -1,0 +1,44 @@
+{
+  "name": "graphql-aws-sqs-subscriptions",
+  "version": "1.0.0",
+  "description": "A graphql subscriptions implementation using AWS SQS and apollo's graphql-subscriptions",
+  "main": "dist/index.js",
+  "scripts": {
+    "prepublishOnly": "npm run test",
+    "compile": "tsc",
+    "pretest": "npm run compile",
+    "test": "npm run testonly -- && npm run integration --",
+    "posttest": "npm run lint",
+    "lint": "tslint --project ./tsconfig.json ./src/**/*.ts",
+    "watch": "tsc -w",
+    "testonly": "mocha --reporter spec --full-trace ./dist/test/tests.js ",
+    "preintegration": "npm run compile",
+    "integration": "mocha --reporter spec --full-trace ./dist/test/integration-tests.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ouadie-lahdioui/graphql-aws-sqs-subscriptions.git"
+  },
+  "author": "Ouadie LAHDIOUI",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ouadie-lahdioui/graphql-aws-sqs-subscriptions/issues"
+  },
+  "homepage": "https://github.com/ouadie-lahdioui/graphql-aws-sqs-subscriptions#readme",
+  "keywords": [
+    "graphql",
+    "graphql-subscriptions",
+    "subscriptions",
+    "aws",
+    "sqs",
+    "aws-sqs",
+    "apollo"
+  ],
+  "dependencies": {
+    "aws-sdk": "^2.397.0"
+  },
+  "devDependencies": {
+    "tslint": "^5.12.1",
+    "typescript": "^3.3.1"
+  }
+}
